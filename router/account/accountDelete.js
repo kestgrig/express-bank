@@ -1,9 +1,14 @@
 import { accounts } from '../../data/accountsData';
+import express from 'express';
 
-accountDelete.delete('/api/account/:name', (req, res) => {
-    const { name } = req.params; //istraukiamas name
+const router = express.Router();
+
+router.delete('/api/account/:name-:surname', (req, res) => {
+    const { name, surname } = req.params; //istraukiamas name ir surname
     const index = accounts.findIndex(account =>
-        account.name.toLowerCase() === name.toLowerCase());     // surasti saskaitos index pagal varda
+        account.name.toLowerCase() === name.toLowerCase() &&
+        account.surname.toLowerCase() === surname.toLowerCase()
+    );
 
     //patikrinti ar tokia saskaita egzistuoja, jei ne ismesti klaida su zinute
 
