@@ -3,7 +3,7 @@ export const accountsData = [
         name: 'Jonas',
         surname: 'Jonaitis',
         dateOfBirth: '1950-06-01',
-        money: 200,
+        money: 0,
     },
     {
         name: 'Simas',

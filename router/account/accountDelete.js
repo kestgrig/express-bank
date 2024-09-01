@@ -5,8 +5,8 @@ accountDelete.delete('/api/account/:name', (req, res) => {
     const index = accountIndex(name); //grazina saskaitos indeksa
     const account = accounts[index];  //objektas iš accounts masyvo pagal index.
 
-    //patikrinti ar tokia saskaita egzistuoja, jei ne ismesti klaida su zinute
     //patikrinti ar money didesnis uz 0, jei likutis !0 negalim istrinti.
+    //patikrinti ar tokia saskaita egzistuoja, jei ne ismesti klaida su zinute
 
     if (account.money > 0) {
         return res.json({
