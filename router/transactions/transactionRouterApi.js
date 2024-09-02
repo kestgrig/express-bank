@@ -12,4 +12,4 @@ transactionRouterApi.post('/withdrawal/:name-:surname', withdrawal);
 transactionRouterApi.post('/deposit/:name-:surname', deposit);
 
 // Transfer
-transactionRouterApi.post('/transfer/from-:fromName-:fromSurname/to-:toName-:toSurname', transfer);
+transactionRouterApi.post('/transfer/from/:fromName-:fromSurname/to/:toName-:toSurname', transfer);
