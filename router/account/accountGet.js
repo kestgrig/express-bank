@@ -1,7 +1,7 @@
 import { accountsData } from '../../data/accountsData.js';
 
 export function accountGet(req, res) {
-    const { name, surname } = req.params;
+    const { name, surname, dateOfBirth } = req.params;
     //rasti acc su tokiu  name surname ir dob
     const acc = accountsData.find(account =>
         account.name.toLowerCase() === name.toLowerCase() &&

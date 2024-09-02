@@ -1,7 +1,9 @@
 import { accountsData } from '../../data/accountsData.js';
-import { isName, isValidDateOfBirth, isUniqueAccount } from '../../valid/validation.js';
+import { isName } from '../../valid/isName.js';
+import { isValidDateOfBirth } from '../../valid/isValidDateOfBirth.js';
+import { isUniqueAccount } from '../../valid/isUniqueAccount.js';
 
-export const accountPost = (req, res) => {
+export function accountPost(req, res) {
     const { name, surname, dateOfBirth } = req.body;
 
     const nameError = isName(name);
@@ -27,4 +29,4 @@ export const accountPost = (req, res) => {
         status: "success",
         message: "Sąskaita sėkmingai sukurta"
     });
-}
+};
