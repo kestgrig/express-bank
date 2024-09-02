@@ -1,9 +1,6 @@
 import { accounts } from '../../data/accountsData';
-import express from 'express';
 
-const router = express.Router();
-
-router.delete('/api/account/:name-:surname', (req, res) => {
+export function accountDelete(req, res) {
     const { name, surname } = req.params; //istraukiamas name ir surname
     const index = accounts.findIndex(account =>
         account.name.toLowerCase() === name.toLowerCase() &&
