@@ -1,5 +1,5 @@
 import { accountsData } from '../../data/accountsData.js';
-import { isName, isValidDateOfBirth, isUniqueAccount } from '../../helpers/validation.js';
+import { isName, isValidDateOfBirth, isUniqueAccount } from '../../valid/validation.js';
 
 export const accountPost = (req, res) => {
     const { name, surname, dateOfBirth } = req.body;
