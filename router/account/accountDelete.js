@@ -35,4 +35,4 @@ export function accountDelete(req, res) {
         status: "success",
         message: "Sąskaita sėkmingai ištrinta."
     });
-});
+};
