@@ -1,8 +1,8 @@
-import { accounts } from '../../data/accountsData';
+import { accountsData } from '../../data/accountsData.js';
 
 export function accountDelete(req, res) {
     const { name, surname } = req.params; //istraukiamas name ir surname
-    const index = accounts.findIndex(account =>
+    const index = accountsData.findIndex(account =>
         account.name.toLowerCase() === name.toLowerCase() &&
         account.surname.toLowerCase() === surname.toLowerCase()
     );
