@@ -82,7 +82,7 @@ Would like to run this project locally? Open terminal and follow these steps:
         {
         "name": "Name",
         "surname": "Surname",
-        "birthDate": "YYYY-MM-DD"
+        "dateOfBirth": "YYYY-MM-DD"
         }
 
 -   Update an Account
@@ -91,7 +91,7 @@ Would like to run this project locally? Open terminal and follow these steps:
         {
         "newName": "Name",
         "newSurname": "Surname",
-        "newBirthDate": "YYYY-MM-DD"
+        "newDateOfBirth": "YYYY-MM-DD"
         }
 
 -   Retrieve Account Information
@@ -126,7 +126,7 @@ Would like to run this project locally? Open terminal and follow these steps:
 
     -   PUT /api/account/{name-surname}/dob
         {
-        "newBirthDate": "YYYY-MM-DD"
+        "newDateOfBirth": "YYYY-MM-DD"
         }
 
 -   Financial Transaction Endpoints
