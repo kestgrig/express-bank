@@ -80,46 +80,46 @@ Would like to run this project locally? Open terminal and follow these steps:
 
     -   POST /api/account
         {
-        "name": "Name",
-        "surname": "Surname",
-        "dateOfBirth": "YYYY-MM-DD"
+        "name": "Antanas",
+        "surname": "Antanaitis",
+        "dateOfBirth": "1940-02-01"
         }
 
 -   Update an Account
 
-        -   PUT /api/account/{name-surname}
+        -   PUT /api/account/name-surname
 
 -   Retrieve Account Information
 
-    -   GET /api/account/{name-surname}
+    -   GET /api/account/name-surname
 
 -   Delete an Account
 
-    -   DELETE /api/account/{name-surname}
+    -   DELETE /api/account/name-surname
 
 -   Manage Account Name
 
-    -   GET /api/account/{name-surname}/name
+    -   GET /api/account/name-surname/name
 
-    -   PUT /api/account/{name-surname}/name
+    -   PUT /api/account/name-surname/name
         {
         "newName": "Name"
         }
 
 -   Manage Account SurName
 
-    -   GET /api/account/{name-surname}/surname
+    -   GET /api/account/name-surname/surname
 
-    -   PUT /api/account/{name-surname}/surname
+    -   PUT /api/account/name-surname/surname
         {
         "newSurname": "Surname"
         }
 
 -   Manage Account Date of Birth
 
-    -   GET /api/account/{name-surname}/dob
+    -   GET /api/account/name-surname/dob
 
-    -   PUT /api/account/{name-surname}/dob
+    -   PUT /api/account/name-surname/dob
         {
         "newDateOfBirth": "YYYY-MM-DD"
         }
@@ -127,18 +127,18 @@ Would like to run this project locally? Open terminal and follow these steps:
 -   Financial Transaction Endpoints
 -   Deposit Money to Account
 
-    -   POST /api/deposit/{name-surname}
+    -   POST /api/deposit/name-surname
         {
         "amount": 800
         }
 
 -   Withdraw Money from Account
-    -   POST /api/withdrawal/{name-surname}
+    -   POST /api/withdrawal/name-surname
         {
         "amount": 500
         }
 -   Transfer Money Between Accounts
-    -   POST /api/transfer/{from-name-surname}/{to-name-surname}
+    -   POST /api/transfer/from/name-surname/to/name-surname
         {
         "amount": 400
         }
