@@ -1,5 +1,5 @@
 import express from 'express';
-import { routerApiAccount } fr
+import { mainRouter } from './router/mainRouter.js';
 
 const app = express();
 const port = 5100;
@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use('/', routerMain);
+app.use('/', mainRouter);
 
 
 app.use((req, res, next) => {
