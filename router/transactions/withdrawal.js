@@ -3,7 +3,8 @@ import { isValidAmount } from '../../valid/isValidAmount.js';
 import { isAccountEmpty } from '../../valid/isAccountEmpty.js';
 
 export function withdrawal(req, res) {
-    const { amount, name, surname } = req.body;
+    const { amount } = req.body;
+    const { name, surname } = req.params;
 
     const account = accountsData.find(acc =>
         acc.name.toLowerCase() === name.toLowerCase() &&

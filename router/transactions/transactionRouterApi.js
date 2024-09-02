@@ -6,10 +6,10 @@ import { transfer } from './transfer.js';
 export const transactionRouterApi = express.Router();
 
 // Withdrawal
-transactionRouterApi.post('/withdrawal', withdrawal);
+transactionRouterApi.post('/withdrawal/:name-:surname', withdrawal);
 
 // Deposit
-transactionRouterApi.post('/deposit', deposit);
+transactionRouterApi.post('/deposit/:name-:surname', deposit);
 
 // Transfer
-transactionRouterApi.post('/transfer', transfer);
+transactionRouterApi.post('/transfer/from-:fromName-:fromSurname/to-:toName-:toSurname', transfer);

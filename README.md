@@ -87,12 +87,7 @@ Would like to run this project locally? Open terminal and follow these steps:
 
 -   Update an Account
 
-    -   PUT /api/account/{name-surname}
-        {
-        "newName": "Name",
-        "newSurname": "Surname",
-        "newDateOfBirth": "YYYY-MM-DD"
-        }
+        -   PUT /api/account/{name-surname}
 
 -   Retrieve Account Information
 
@@ -117,7 +112,7 @@ Would like to run this project locally? Open terminal and follow these steps:
 
     -   PUT /api/account/{name-surname}/surname
         {
-        "newName": "Surname"
+        "newSurname": "Surname"
         }
 
 -   Manage Account Date of Birth

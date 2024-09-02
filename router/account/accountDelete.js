@@ -18,7 +18,7 @@ export function accountDelete(req, res) {
 
     //patikrinti ar money didesnis uz 0, jei likutis !0 negalim istrinti.
 
-    const account = accounts[index];
+    const account = accountsData[index];
 
     if (account.money > 0) {
         return res.json({
@@ -30,7 +30,7 @@ export function accountDelete(req, res) {
 
     //jei saskaitoje nera pinigu ir ji egzistuoja istrinti accounta
 
-    accounts.splice(index, 1);
+    accountsData.splice(index, 1);
     return res.json({
         status: "success",
         message: "Sąskaita sėkmingai ištrinta."

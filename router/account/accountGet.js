@@ -1,12 +1,12 @@
 import { accountsData } from '../../data/accountsData.js';
 
 export function accountGet(req, res) {
-    const { name, surname, dateOfBirth } = req.params;
+    const { name, surname } = req.params;
     //rasti acc su tokiu  name surname ir dob
     const acc = accountsData.find(account =>
         account.name.toLowerCase() === name.toLowerCase() &&
-        account.surname.toLowerCase() === surname.toLowerCase() &&
-        account.dateOfBirth === dateOfBirth
+        account.surname.toLowerCase() === surname.toLowerCase()
+
     );
 
     //jeigu nera tokio acc ismetama klaida

@@ -11,9 +11,7 @@ import { getAccountDob, updateAccountDob } from './accountDob.js';
 export const routerApiAccount = express.Router();
 
 //sukurti /api/account naujai saskaitai be name ir surname (Post)
-routerApiAccount
-    .route('/account')
-    .post(accountPost);
+routerApiAccount.post('/account', accountPost);
 
 //sukurti /api/account/:name-:surname  cia kiekvieno accounto rodomas vardas ir pavarde
 //panaudoti (Get)-grazina name surname dob,
@@ -27,17 +25,19 @@ routerApiAccount
     .delete(accountDelete);
 
 
-//vardui gauti
 routerApiAccount
-    .get('/account/:name-:surname/name', getAccountName)
-    .put('/account/:name-:surname/name', updateAccountName);
+    .route('/account/:name-:surname/name')
+    .get(getAccountName)
+    .put(updateAccountName);
 
-//pavardei 
+// Gauti ar atnaujinti pavarde
 routerApiAccount
-    .get('/account/:name-:surname/surname', getAccountSurname)
-    .put('/account/:name-:surname/surname', updateAccountSurname);
+    .route('/account/:name-:surname/surname')
+    .get(getAccountSurname)
+    .put(updateAccountSurname);
 
-//gimimo datai
+// Gauti ar atnaujinti gimimo data
 routerApiAccount
-    .get('/account/:name-:surname/dob', getAccountDob)
-    .put('/account/:name-:surname/dob', updateAccountDob);
+    .route('/account/:name-:surname/dob')
+    .get(getAccountDob)
+    .put(updateAccountDob);

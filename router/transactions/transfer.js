@@ -3,7 +3,8 @@ import { isValidAmount } from '../../valid/isValidAmount.js';
 import { isAccountEmpty } from '../../valid/isAccountEmpty.js';
 
 export function transfer(req, res) {
-    const { fromName, fromSurname, toName, toSurname, amount } = req.body;
+    const { amount } = req.body;
+    const { fromName, fromSurname, toName, toSurname } = req.params;
 
     const fromAccount = accountsData.find(acc =>
         acc.name.toLowerCase() === fromName.toLowerCase() &&

@@ -2,7 +2,8 @@ import { accountsData } from '../../data/accountsData.js';
 import { isValidAmount } from '../../valid/isValidAmount.js';
 
 export function deposit(req, res) {
-    const { amount, name, surname } = req.body;
+    const { amount } = req.body;
+    const { name, surname } = req.body;
 
     const account = accountsData.find(acc =>
         acc.name.toLowerCase() === name.toLowerCase() &&
