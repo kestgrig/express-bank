@@ -4,25 +4,27 @@ import { isName, isValidDateOfBirth, isUniqueAccount } from '../../valid/validat
 export const accountPost = (req, res) => {
     const { name, surname, dateOfBirth } = req.body;
 
-    // Patikrinimai
-    let errorMessage = isName(name) || isName(surname) || isValidDateOfBirth(dateOfBirth);
-    if (errorMessage) {
-        return res.status(400).json({ message: errorMessage });
+    const nameError = isName(name);
+    const surnameError = isName(surname);
+    const dobError = isValidDateOfBirth(dateOfBirth);
+
+    if (nameError || surnameError || dobError) {
+        return res.status(400).json({
+            status: "error",
+            message: nameError || surnameError || dobError
+        });
     }
 
-    // Tikriname, ar sąskaita jau egzistuoja
     if (!isUniqueAccount(name, surname, accountsData)) {
-        return res.status(400).json({ message: 'Tokia sąskaita jau egzistuoja.' });
+        return res.status(400).json({
+            status: "error",
+            message: "Ši sąskaita jau egzistuoja"
+        });
     }
 
-    // Sukuriame naują sąskaitą
-    const newAccount = {
-        name,
-        surname,
-        dateOfBirth,
-        money: 0
-    };
-    accountsData.push(newAccount);
-
-    return res.status(201).json(newAccount);
-};
+    accountsData.push({ name, surname, dateOfBirth, money: 0 });
+    return res.status(201).json({
+        status: "success",
+        message: "Sąskaita sėkmingai sukurta"
+    });
+}
