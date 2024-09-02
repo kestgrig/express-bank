@@ -13,7 +13,6 @@ app.use(express.static('public'));
 
 app.use('/', mainRouter);
 
-
 app.use((req, res, next) => {
     return res.status(404).send("Ups... Norimas puslapis nerastas");
 });
@@ -23,14 +22,9 @@ app.use((err, req, res, next) => {
     return res.status(500).send('Ups... Serverio klaida 500');
 });
 
-
-app.get('*', (req, res) => {
-    return res.send('');
-});
-
 app.listen(port, () => {
     console.log(`Serveris pasileido:: http://localhost:${port}`);
-})
+});
 
 
 

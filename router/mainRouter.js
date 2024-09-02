@@ -5,6 +5,6 @@ import { transactionRouterApi } from '../router/transactions/transactionRouterAp
 
 export const mainRouter = express.Router();
 
-mainRouter.use('/api', routerApiAccount);
-mainRouter.use('/api', transactionRouterApi);
+mainRouter.use('/api/', routerApiAccount);
+mainRouter.use('/api/', transactionRouterApi);
 
